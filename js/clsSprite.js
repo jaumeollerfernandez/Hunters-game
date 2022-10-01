@@ -10,10 +10,18 @@ class Sprite{
 
         //Sombras
         this.shadow = new Image();
-        this.shadow.src = "images/characters/shadow.png";
-        this.shadow.onload = () =>{
-            this.isShadowLoaded = true;
+        //Determina si queremos usar sombrea
+        this.useShadow = true;
+        //En caso de ser así, coge la ruta
+        if(this.useShadow){
+            this.shadow.src = "images/characters/shadow.png";
         }
+        //Hace la función callback para saber si está cargada, para el paso final de dibujar
+        this.shadow.onload = () =>{
+            //Se determina si se quieren usar sombras o no
+            this.isShadowLoaded = true;
+        }   
+
 
         //En this.animations marcaremos la configuración de los sprites y su posición. Los sprites son matrices, y aquí delimitaremos qué harán en cada caso.
         this.animations = config.animations || {
@@ -36,6 +44,8 @@ class Sprite{
         
         //Esto se pone porque si no ha hecho la función onload del constructor, hay un problema con el dibujo.
         //Si está cargado (true), entonces dibuja.
+        this.isShadowLoaded && ctx.drawImage(this.shadow,x,y)
+
         this.isLoaded && ctx.drawImage(this.image,
             0,0,
             32,32, // En caso de tener de distintas medidas, jugar con esta variable.
