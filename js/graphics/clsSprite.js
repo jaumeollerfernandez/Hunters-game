@@ -39,8 +39,8 @@ class Sprite{
 
     draw(ctx){
         //Se hace lo similar a Overworld de dibujar.
-        const x = this.gameObject.x *16 -8;
-        const y =  this.gameObject.y*16-18;
+        const x = this.gameObject.x-8;
+        const y =  this.gameObject.y-18;
         
         //Esto se pone porque si no ha hecho la función onload del constructor, hay un problema con el dibujo.
         //Si está cargado (true), entonces dibuja.
