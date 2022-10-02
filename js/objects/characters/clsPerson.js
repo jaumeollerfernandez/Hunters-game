@@ -1,8 +1,12 @@
 class Person extends GameObject{
     constructor(config){
+        //Herencia de GameObject.
         super(config);
-        this.movingProgressRemaining = 16;
-        this.direction = "up";
+        //Número de posiciones que quedan por moverse.
+        this.movingProgressRemaining = 0;
+
+        // Esto se pone para saber cuál de las clases person es la que controla el jugador. Luego se pondrá en el json con todos los elementos de npc y jugador, y se le dará un true al objeto que controles.
+        this.playerControlled = config.isPlayerControlled || false;
 
         this.directionUpdate = {
             "up": ["y",-1],
@@ -16,6 +20,11 @@ class Person extends GameObject{
     update(state){
         //llama al método de nuestra clase.
         this.updatePosition();
+
+        if(this.playerControlled && this.movingProgressRemaining === 0 && state.arrow){
+            this.direction = state.arrow;
+            this.movingProgressRemaining = 16;
+        }
     }
 
     updatePosition(){

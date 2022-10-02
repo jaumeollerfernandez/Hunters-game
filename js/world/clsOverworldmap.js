@@ -26,16 +26,17 @@ window.OverworldMaps = {
         lowerSrc: "images/maps/DemoLower.png",
         upperSrc: "images/maps/DemoUpper.png",
         gameObjects:{
-            hero : new GameObject({
+            hero : new Person({
+                isPlayerControlled : true,
                 x: utils.withGrid(5),
                 y: utils.withGrid(6),
                 src:"images/characters/people/hero.png"
-            }),
-            npc1 : new GameObject({
-                x: 7,
-                y: 9,
-                src:"images/characters/people/npc1.png"
-            })
+            })//,
+            // npc1 : new Person({
+            //     x: 7,
+            //     y: 9,
+            //     src:"images/characters/people/npc1.png"
+            // })
         }
     },
     // Mapa 2
@@ -44,6 +45,7 @@ window.OverworldMaps = {
         upperSrc: "images/maps/KitchenUpper.png",
         gameObjects:{
             hero : new Person({
+                isPlayerControlled: true,
                 x: utils.withGrid(5),
                 y: utils.withGrid(10),
                 src:"images/characters/people/hero.png"

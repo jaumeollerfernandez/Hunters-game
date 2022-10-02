@@ -25,11 +25,13 @@ class Sprite{
 
         //En this.animations marcaremos la configuración de los sprites y su posición. Los sprites son matrices, y aquí delimitaremos qué harán en cada caso.
         this.animations = config.animations || {
-            idleDown : [[0,0]]
+            "idle-down" : [
+                [0,0]
+            ]
         }
 
         //Variará según la posición en la que se encuentre.
-        this.currentAnimation = config.currentAnimation || "idleDown";
+        this.currentAnimation = config.currentAnimation || "idle-down";
         //Seguramente vaya a ser un contador de dónde está el frame
         this.currentAnimationFrame = 0;
 
