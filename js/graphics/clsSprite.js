@@ -86,10 +86,13 @@ class Sprite{
         }
     }
 
-    draw(ctx){
+    draw(ctx, pCameraperson){
         //Se hace lo similar a Overworld de dibujar.
-        const x = this.gameObject.x-8;
-        const y =  this.gameObject.y-18;
+        // 10.5 X, 6 Y
+        //Mediante los parámetros de cámara añadidos y los 10.5 y el 6, podemos fijar el objetivo en el centro de la cámara.
+        //IMPORTANTE: EN CASO DE NO QUERER QUE SE MUEVA LA CÁMARA, BORRAR DESDE -8 + HASTA UTILS.WITGRID.
+        const x = this.gameObject.x -8 + utils.withGrid(10.5) - pCameraperson.x;
+        const y =  this.gameObject.y-18 + utils.withGrid(6) - pCameraperson.y;
         
         const [FRAMEX, FRAMEY] = this.frame;
         // const FRAMEX = this.animations["walk-down"][0][0];
