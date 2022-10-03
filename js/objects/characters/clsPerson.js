@@ -20,6 +20,7 @@ class Person extends GameObject{
     update(state){
         //llama al método de nuestra clase.
         this.updatePosition();
+        this.updateSprite(state)
 
         if(this.playerControlled && this.movingProgressRemaining === 0 && state.arrow){
             this.direction = state.arrow;
@@ -33,6 +34,17 @@ class Person extends GameObject{
             const [property, change] = this.directionUpdate[this.direction] //property será la x o la y, y el change el valor.
             this[property]+=change;
             this.movingProgressRemaining -=1;
+        }
+    }
+
+    updateSprite(state){
+        //En el caso de que no corresponda una arrow en la iteración 16, hará que la animación corresponda a el idle + la última dirección registrada por el usuario
+        if(this.playerControlled && this.movingProgressRemaining === 0 && !state.arrow){
+            this.sprite.setAnimation("idle-"+this.direction);
+        }
+        //En caso de que se mueva, seguirá cogiendo la dirección recogida por el evento y le concatena la animación de andar.
+        if(this.movingProgressRemaining > 0){
+            this.sprite.setAnimation("walk-"+this.direction);
         }
     }
 }

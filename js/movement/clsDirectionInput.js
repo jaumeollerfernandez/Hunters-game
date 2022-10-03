@@ -20,8 +20,6 @@ class DirectionInput{
     }
 
     init(){
-
-        console.log('hola')
         console.log(this.heldDirections)
         // NOTA: Super importante poner keydown y keyup. Keydown es cuando pulsas una tecla, y keyup es cuadno la levantas. Para mantener un máximo de ordenes, se hace mediante el array de arriba.
         document.addEventListener("keydown", e => {
@@ -31,9 +29,7 @@ class DirectionInput{
             if(dir && this.heldDirections.indexOf(dir) === -1){
                 this.heldDirections.unshift(dir);
                 console.log(this.heldDirections);
-            } else{
-                console.log('fallaS');
-            }
+            } 
         })
         document.addEventListener("keyup",e => {
             const dir = this.map[e.code];
@@ -41,8 +37,6 @@ class DirectionInput{
             if (index > -1){
                 this.heldDirections.splice(index, 1);
                 console.log(this.heldDirections)
-            } else{
-                console.log('fallaW');
             }
         })
     }
