@@ -50,7 +50,7 @@ class Overworld {
 
 
         //Carga qué mapa se cargará primero.
-        this.map = new OverworldMap(window.OverworldMaps.DemoRoom)
+        this.map = new OverworldMap(window.OverworldMaps.Kitchen)
         this.startGameLoop();
 
     };
