@@ -12,7 +12,6 @@ class Overworld {
         //Genera un "bucle infinito" para cada frame que habrá en el juego.
         const step = () => {
             
-
             //Poner una cámara. Se determinará en este parámetro/variable constante cuál será el objetivo de la cámara. APUNTAR PARA CINEMÁTICAS
             const CAMERAPERSON = this.map.gameObjects.hero;
 
@@ -24,6 +23,7 @@ class Overworld {
             //         arrow: this.directionInput.direction
             //     })
             //     object.sprite.draw(this.ctx, CAMERAPERSON);})
+
 
             
             //Cada inicio de bucle, vuelve a dibujar el canvas de nuevo.
