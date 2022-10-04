@@ -46,6 +46,9 @@ window.OverworldMaps = {
                 //     y: 9,
                 //     src:"images/characters/people/npc1.png"
                 // })
+            },
+            walls:{
+                
             }
         },
         HorrorRoom: {
@@ -61,7 +64,7 @@ window.OverworldMaps = {
                 GUARD: new Person({
                     isPlayerControlled: false,
                     x: utils.withGrid(3),
-                    y: utils.withGrid(4),
+                    y: utils.withGrid(3),
                     src: "images/characters/people/guard1fail.png"
                 }),
                 camera : new Person({
@@ -70,7 +73,9 @@ window.OverworldMaps = {
                     y: utils.withGrid(6),
                     src:"a"
                 })
-                
+            },
+            walls:{
+                // [utils.asGridCoord(7,6)]: true
             }
         },
         // Mapa 2

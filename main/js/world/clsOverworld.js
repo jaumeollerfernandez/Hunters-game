@@ -15,14 +15,14 @@ class Overworld {
             //Poner una cámara. Se determinará en este parámetro/variable constante cuál será el objetivo de la cámara. APUNTAR PARA CINEMÁTICAS
             const CAMERAPERSON = this.map.gameObjects.hero;
 
-            //ACTIVAR ESTA OPCIÓN HACE QUE EL PERSONAJE VAYA MÁS RÁPIDO, O EL EFECTO DE LA CÁMARA ES MAYOR DEBIDO A VOLVER A IMPRIMIRLO EN PANTALLA.
-            // Object.values(this.map.gameObjects).forEach(object =>{
-            //     //Este valor tendrá luego los datos necesarios para saber qué deben hacer los personajes en cada momento (update de la posición)
-            //     object.update({
-            //         //Obtendrá el valor que se ha generado del evento de pulsar la tecla
-            //         arrow: this.directionInput.direction
-            //     })
-            //     object.sprite.draw(this.ctx, CAMERAPERSON);})
+            // ACTIVAR ESTA OPCIÓN HACE QUE EL PERSONAJE VAYA MÁS RÁPIDO, O EL EFECTO DE LA CÁMARA ES MAYOR DEBIDO A VOLVER A IMPRIMIRLO EN PANTALLA.
+            Object.values(this.map.gameObjects).forEach(object =>{
+                //Este valor tendrá luego los datos necesarios para saber qué deben hacer los personajes en cada momento (update de la posición)
+                object.update({
+                    //Obtendrá el valor que se ha generado del evento de pulsar la tecla
+                    arrow: this.directionInput.direction
+                })
+                object.sprite.draw(this.ctx, CAMERAPERSON);})
 
 
             

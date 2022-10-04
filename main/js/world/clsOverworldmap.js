@@ -28,6 +28,12 @@ class OverworldMap {
         );
 
     }
+
+    //La variable recalcula constantemente la posición del jugador, en base a los valores que son de las Walls en overworldmap. Mediante un booleano, le accede el paso o no al jugador, obteniendo la colisión.
+    isSpaceTaken(currentX, currentY, direction){
+        const {x,y} = utils.nextPosition(currentX,currentY,direction);
+        return this.walls[`${x},${y}`] || false
+    }
 }
 //Todos los mapas que habrán en el juego.
 
@@ -48,6 +54,12 @@ window.OverworldMaps = {
                 //     y: 9,
                 //     src:"images/characters/people/npc1.png"
                 // })
+            },
+            walls:{
+                [utils.asGridCoord(7,6)]:true,
+                [utils.asGridCoord(8,6)]:true,
+                [utils.asGridCoord(7,7)]:true,
+                [utils.asGridCoord(8,7)]:true,
             }
         },
         // Mapa 2

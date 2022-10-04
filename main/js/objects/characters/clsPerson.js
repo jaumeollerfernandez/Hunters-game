@@ -24,6 +24,8 @@ class Person extends GameObject{
 
         if(this.playerControlled && this.movingProgressRemaining === 0 && state.arrow){
             this.direction = state.arrow;
+
+            // state.map.isSpaceTaken(this.x, this.y, this.direction);
             //Distancia de movimiento cuando ejecuta una acción.
             this.movingProgressRemaining = 16;
         }
