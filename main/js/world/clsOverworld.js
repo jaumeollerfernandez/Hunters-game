@@ -25,6 +25,7 @@ class Overworld {
                 object.sprite.draw(this.ctx, CAMERAPERSON);})
 
 
+
             
             //Cada inicio de bucle, vuelve a dibujar el canvas de nuevo.
             this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height)
