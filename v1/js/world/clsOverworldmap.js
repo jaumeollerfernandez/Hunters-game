@@ -58,6 +58,12 @@ window.OverworldMaps = {
                     y: utils.withGrid(6),
                     src: "images/characters/people/personaje1_test.png"
                 }),
+                GUARD: new Person({
+                    isPlayerControlled: false,
+                    x: utils.withGrid(3),
+                    y: utils.withGrid(4),
+                    src: "images/characters/people/guard1fail.png"
+                }),
                 camera : new Person({
                     isPlayerControlled: false,
                     x: utils.withGrid(11),

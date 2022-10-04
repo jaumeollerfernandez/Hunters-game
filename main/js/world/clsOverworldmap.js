@@ -5,6 +5,8 @@ class OverworldMap {
         this.lowerImage = new Image();
         this.lowerImage.src = config.lowerSrc; // Esto dibujará el suelo
 
+        this.walls = config.walls || {};
+
         this.upperImage = new Image();
         this.upperImage.src = config.upperSrc; //Esto dibujará los edificios, tejados, etc.
 
