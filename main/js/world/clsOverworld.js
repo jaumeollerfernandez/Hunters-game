@@ -19,6 +19,7 @@ class Overworld {
             Object.values(this.map.gameObjects).forEach(object =>{
                 //Este valor tendrá luego los datos necesarios para saber qué deben hacer los personajes en cada momento (update de la posición)
                 object.update({
+                    map: this.map,
                     //Obtendrá el valor que se ha generado del evento de pulsar la tecla
                     arrow: this.directionInput.direction
                 })

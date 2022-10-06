@@ -9,10 +9,10 @@ class Person extends GameObject{
         this.playerControlled = config.isPlayerControlled || false;
 
         this.directionUpdate = {
-            "up": ["y",-1],
-            "down": ["y",1],
-            "left": ["x",-1],
-            "right": ["x",1]
+            "up": ["y",-0.5],
+            "down": ["y",0.5],
+            "left": ["x",-0.5],
+            "right": ["x",0.5]
         }
 
     }
@@ -24,8 +24,7 @@ class Person extends GameObject{
 
         if(this.playerControlled && this.movingProgressRemaining === 0 && state.arrow){
             this.direction = state.arrow;
-
-            // state.map.isSpaceTaken(this.x, this.y, this.direction);
+            // state.map.isSpaceTaken(this.x, this.y, this.direction)
             //Distancia de movimiento cuando ejecuta una acción.
             this.movingProgressRemaining = 16;
         }

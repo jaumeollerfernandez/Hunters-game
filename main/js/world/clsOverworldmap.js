@@ -5,6 +5,7 @@ class OverworldMap {
         this.lowerImage = new Image();
         this.lowerImage.src = config.lowerSrc; // Esto dibujará el suelo
 
+        //Declaramos la variable para las colisiones
         this.walls = config.walls || {};
 
         this.upperImage = new Image();
