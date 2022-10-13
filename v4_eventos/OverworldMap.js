@@ -12,6 +12,8 @@ class OverworldMap{
 
         this.upperImage = new Image();
         this.upperImage.src = config.upperSrc; //capa que va por arriba (techos)
+
+        this.isCutscenePlaying = true;
     }
 
     drawLowerImage(ctx){
@@ -44,6 +46,20 @@ class OverworldMap{
 
             object.mount(this);
         })
+    }
+
+    async startCutscene(events){
+        this.isCutScenePlaying = true;
+
+        for(let i = 0; i<events.length; i++){
+            const eventHandler = new OverworldEvent({
+                event: events[i],
+                map: this
+            })
+            await eventHandler.init();
+        }
+
+        this.isCutScenePlaying = false;
     }
 
     // Check Colisiones contra otros objetos (ejemplo, que un personaje atraviese a otro)
@@ -85,18 +101,18 @@ window.OverworldMaps={
                 isPlayerControlled: true ,
                 x: utils.withGrid(5),
                 y: utils.withGrid(6),
-                src: "/images/characters/people/personaje1.png",
-                behaviorLoop:[
-                    {type: "walk", direction: "left"},
-                    {type: "stand", direction: "up",time: 800},
-                    {type:"walk", direction: "right"}
-                ]
+                src: "/images/characters/people/personaje1.png"
             }),
             npc2: new Person({
                 isPlayerControlled: false ,
                 x: utils.withGrid(7),
                 y: utils.withGrid(9),
-                src: "images/characters/people/npc1.png"
+                src: "images/characters/people/npc1.png",
+                behaviorLoop:[
+                    {type: "walk", direction: "left"},
+                    {type: "stand", direction: "up",time: 800},
+                    {type:"walk", direction: "right"}
+                ]
             })
 
             // box: new GameObject({

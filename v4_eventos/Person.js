@@ -27,6 +27,7 @@ class Person extends GameObject{  //Creamos una clase Person a partir de la clas
 
             // En este caso queremos saber si el teclado está listo y estamos picando una flecha (direccion)
             if (this.isPlayerControlled && state.arrow) {
+                //Tendrá relación directa con Overwold Event (la clase)
                 this.startBehavior(state, {
                   type: "walk",
                   direction: state.arrow
@@ -48,6 +49,12 @@ class Person extends GameObject{  //Creamos una clase Person a partir de la clas
 
             //El personaje se para si el espacio no está libre (colision)
             if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
+
+                //En caso de que falle y se estampe contra algo, esto provocará que vuelva a intentarlo a los 10 ms.
+                behavior.retry && setTimeout(()=>{
+                    this.startBehavior(state, behavior)
+                },10)
+
                 //si el espacio está ocupado, sonará el sonido de que se ha golpeado con algo
                 document.getElementById('hit').play();
                 return;
@@ -66,9 +73,19 @@ class Person extends GameObject{  //Creamos una clase Person a partir de la clas
 
             }
             this.movingProgressRemaining = 16;  //resetea el contador a 16 (PUEDE SER QUE ESTE CONTADOR SE MANTENGA A 16 PARA EVITAR EL MOVIMIENTO DEL PERSONAJE)
-            
+            this.updateSprite(state);
             ////////////////////////////////////////////////////////////////////
     
+        }
+
+        
+        if(behavior.type === "stand"){
+            setTimeout( () => {
+                utils.emitEvent('PersonStandComplete',{
+                    whoId: this.id
+                })
+            },behavior.time)
+
         }
     }
 
@@ -82,6 +99,18 @@ class Person extends GameObject{  //Creamos una clase Person a partir de la clas
         this[property] += change;
         this.movingProgressRemaining -= 1;  //conforme va avanzando se restan el Nº de Posiciones que quedan por moverse
         
+        if(this.movingProgressRemaining === 0){
+            //Se detiene. AQUI DEBEREMOS PONER EL TRIGGER DE LA GRABADORA.
+            // const event = new CustomEvent('PersonWalkingComplete',{
+            //     detail:{
+            //         whoId: this.id
+            //     }
+            // });
+            // document.dispatchEvent(event);
+            utils.emitEvent('PersonWalkingComplete',{
+                whoId: this.id
+            })
+        }
     }
 
 

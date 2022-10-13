@@ -23,7 +23,9 @@ class Overworld{
                 }); 
             })
             
-            Object.values(this.map.gameObjects).forEach(object => {
+            Object.values(this.map.gameObjects).sort((a,b) =>{
+                return a.y - b.y;
+            }).forEach(object => {
                 object.sprite.draw(this.ctx);
             })
 
@@ -45,5 +47,9 @@ class Overworld{
         this.directionInput.init();
       
         this.startGameLoop();
+
+        this.map.startCutscene([
+            {type:"textMessage", text: "Elige: A, B o C"}
+        ])
     }
 }
