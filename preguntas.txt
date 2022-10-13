@@ -1,7 +1,8 @@
 
 Pequeña intro filosófica
 
-Pregunta: Vas en un avión con tres personas. Un inocente niño de 10 años, una persona mayor, una mujer que acaba de enterarse de que es madre, y tu. Sólo un paracaídas disponibles.
+Pregunta: Vas en un avión con tres personas. Un inocente niño de 10 años, una persona mayor, una mujer que acaba de enterarse de que es madre, y tu. 
+Sólo un paracaídas disponibles.
 
 A: Te lo pones tu.
 B: Se lo pone el niño.
