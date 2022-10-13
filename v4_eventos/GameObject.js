@@ -10,6 +10,8 @@ class GameObject {
             src: config.src || "images/characters/people/hero.png",
             
         });
+        this.behaviorLoop = config.behaviorLoop || [];
+        this.behaviorLoopIndex = 0;
 
         
     }
@@ -18,6 +20,10 @@ class GameObject {
         console.log("mounting");
         this.isMounted = true;
         map.addWall(this.x, this.y);
+
+        setTimeout() => {
+            
+        }
     }
     update(){
 
