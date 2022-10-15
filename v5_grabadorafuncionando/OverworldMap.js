@@ -102,18 +102,18 @@ window.OverworldMaps={
                 x: utils.withGrid(5),
                 y: utils.withGrid(6),
                 src: "/images/characters/people/personaje1.png"
-            }),
-            npc2: new Person({
-                isPlayerControlled: false ,
-                x: utils.withGrid(7),
-                y: utils.withGrid(9),
-                src: "images/characters/people/npc1.png",
-                behaviorLoop:[
-                    {type: "walk", direction: "left"},
-                    {type: "stand", direction: "up",time: 2000},
-                    {type:"walk", direction: "right"}
-                ]
             })
+            // npc2: new Person({
+            //     isPlayerControlled: false ,
+            //     x: utils.withGrid(7),
+            //     y: utils.withGrid(9),
+            //     src: "images/characters/people/npc1.png",
+            //     behaviorLoop:[
+            //         {type: "walk", direction: "left"},
+            //         {type: "stand", direction: "up",time: 2000},
+            //         {type:"walk", direction: "right"}
+            //     ]
+            //})
 
             // box: new GameObject({
             //     x: utils.withGrid(6),

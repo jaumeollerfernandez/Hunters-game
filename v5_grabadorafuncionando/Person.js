@@ -50,13 +50,22 @@ class Person extends GameObject{  //Creamos una clase Person a partir de la clas
             //El personaje se para si el espacio no está libre (colision)
             if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
 
+                //Si se descomenta esto, puedes ver en console.log la posición en la que se está chocando.
+                // console.log(this.x/16);
+                // console.log(this.y/16);
+
+                //Mediante esta condición, solo sonará si se choca en la mesa, ya que las coordenadas de la mesa son sólo estas.
+                //Se pueden añadir más condicionantes para diferenciar sonidos, como de pared o de lo que sea, especificando las coordenadas aquí.
+                if(this.x/16 >= 8 && this.x/16 <=14 && this.y/16 >= 4 && this.y/16 <=8){
+                    //si el espacio está ocupado, sonará el sonido de que se ha golpeado con algo
+                    document.getElementById('hit').play();
+                }
+
                 //En caso de que falle y se estampe contra algo, esto provocará que vuelva a intentarlo a los 10 ms.
                 behavior.retry && setTimeout(()=>{
                     this.startBehavior(state, behavior)
                 },10)
 
-                //si el espacio está ocupado, sonará el sonido de que se ha golpeado con algo
-                document.getElementById('hit').play();
                 return;
             }
 
