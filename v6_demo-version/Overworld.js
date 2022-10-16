@@ -5,10 +5,12 @@ class Overworld{
         this.ctx=this.canvas.getContext("2d"); // el canvas se va a renderizar en 2d
         this.map = null;
 
+
     }
 
 
     startGameLoop(){    // va a pintar los frames de los personajes pasados unos segundos
+        
         const step = () => {       //Genera un "bucle infinito" para cada frame que habrá en el juego.
             
             //Limpiar el rastro que dejan los GameObject después de pintarlos
@@ -59,7 +61,7 @@ class Overworld{
                     
         //     }})
 
-        
+
         this.map.mountObjects();
 
         //Comprueba si hay eventos para realizar delante tuyo.
