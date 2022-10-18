@@ -13,7 +13,7 @@ class OverworldEvent{
             type: "stand",
             direction: this.event.direction,
             time: this.event.time
-        })
+        }) 
 
         const completeHandler = e=>{
             if(e.detail.whoId === this.event.who){
