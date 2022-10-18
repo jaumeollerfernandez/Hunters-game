@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunters</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- CONTENEDOR DEL JUEGO  -->
+    <div class="game-container">
+        <canvas class="game-canvas" width="352" height="198"></canvas>
+    </div>
+
+
+    <!-- AUDIOS -->
+
+    
+    
+    <audio id="latido" controls autoplay style="display:none" loop="loop">
+        <source src="/audio/latido_leve.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pregunta1" controls autoplay style="display:none">
+        <source src="/audio/encuentragrabadora.mp3" type="audio/mpeg">
+    </audio>
+    <!-- <audio id="pregunta2" controls autoplay style="display:none">
+        <source src="/audio/pregunta1.mp3" type="audio/mpeg">
+    </audio> -->
+    <!-- <audio id="pregunta3" controls autoplay style="display:none">
+        <source src="/audio/pregunta2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pregunta4" controls autoplay style="display:none">
+        <source src="/audio/pregunta3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pregunta5" controls autoplay style="display:none">
+        <source src="/audio/pregunta4.mp3" type="audio/mpeg">
+    </audio> -->
+    <audio id="susto1" controls autoplay style="display:none">
+        <source src="/audio/susto1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="susto2" controls autoplay style="display:none">
+        <source src="/audio/susto2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="susto3" controls autoplay style="display:none">
+        <source src="/audio/susto3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="step1" controls autoplay style="display:none">
+        <source src="/audio/pasos_cortados_1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="step2" controls autoplay style="display:none">
+        <source src="/audio/pasos_cortados_2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="derechagrabadora" controls style="display:none">
+        <source src="/audio/derechaobjeto.mp3" type="audio/mpeg" pl>
+    </audio>
+    <audio id="hit" controls style="display:none">
+        <source src="/audio/hit.mp3" type="audio/mpeg" pl>
+    </audio>
+    <audio id="izquierdagrabadora" controls style="display:none">
+        <source src="/audio/izquierdaobjeto.mp3" type="audio/mpeg" pl>
+    </audio>
+    <audio id="encontradagrabadora" controls style="display:none">
+        <source src="/audio/encuentracinta.mp3" type="audio/mpeg" pl>
+    </audio>
+    <audio id="pared" controls style="display:none">
+        <source src="/audio/pared.mp3" type="audio/mpeg" pl>
+    </audio>
+    <audio id="puerta" controls style="display:none">
+        <source src="/audio/puerta.mp3" type="audio/mpeg" pl>
+    </audio>
+    <audio id="mesa" controls style="display:none">
+        <source src="/audio/nadamesa.mp3" type="audio/mpeg" pl>
+    </audio>
+    <audio id="mesaizq" controls style="display:none">
+        <source src="/audio/ladomesa1.mp3" type="audio/mpeg" pl>
+    </audio>
+    <audio id="mesader" controls style="display:none">
+        <source src="/audio/ladomesa2.mp3" type="audio/mpeg" pl>
+    </audio>
+
+    <!-- SCRIPTS -->
+    <script src="KeyPressListener.js"></script>
+    <script src="Questions.js"></script>
+    <script src="Cinta.js"></script>
+    <script src="TextMessage.js"></script>
+    <script src="utils.js"></script>
+    <script src="DirectionInput.js"></script>
+    <script src="Overworld.js"></script>
+    <script src="GameObject.js"></script>
+    <script src="Enemy.js"></script>
+    <script src="Person.js"></script>
+    <script src="Sprite.js"></script>
+    <script src="OverworldMap.js"></script>
+    <script src="OverworldEvent.js"></script>
+    <script src="init.js"></script>
+</body>
+</html>

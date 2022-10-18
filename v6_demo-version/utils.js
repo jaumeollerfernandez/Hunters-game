@@ -30,6 +30,10 @@ const utils = {
        detail
     });
     document.dispatchEvent(event);
+    },
+
+    getRandomInt(max) {
+      return Math.floor(Math.random() * max);
     }
 
     

@@ -6,15 +6,14 @@ function function1() {
     
     OVERWORLD.init()
 }
-
-function1();
-
+var latido = document.getElementById('latido');
+latido.play();
 var susto1 = document.getElementById('susto1');
 var susto1 = document.getElementById('susto2');
 var stopaudio = document.getElementById('pregunta1');
-var latido = document.getElementById('latido');
 
-latido.play();
 stopaudio.pause()
 susto1.pause();
 susto2.pause();
+
+function1();

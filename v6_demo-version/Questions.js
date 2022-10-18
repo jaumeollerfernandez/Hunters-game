@@ -50,13 +50,15 @@ class Questions{
         if(this.number == 1){
             document.getElementById('encontradagrabadora').pause();
             var siguiente = document.getElementById('pregunta1');
+            var presiguiente = siguiente.parentNode;
+
             
             siguiente.play();
             document.addEventListener("keypress" , e =>{
-                if (e.key === "1" || e.key === "2" || e.key === "3" || e.key === "4") {        // AQUI HE ESPECIFICADO QUE SI LA TECLA QUE PICO ES ENTER SE REPRODUCIRÁ EL AUDIO
+                if (e.key === "D" || e.key === "F" || e.key === "J" || e.key === "K") {        // AQUI HE ESPECIFICADO QUE SI LA TECLA QUE PICO ES ENTER SE REPRODUCIRÁ EL AUDIO
                     siguiente.pause()
                     siguiente.currentTime = 0;
-                    container.removeChild(siguiente);
+                    presiguiente.removeChild(siguiente)
                     this.done();
                     return;
                 }

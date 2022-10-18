@@ -145,8 +145,8 @@ window.OverworldMaps={
 
             hero: new Person({
                 isPlayerControlled: true ,
-                x: utils.withGrid(5),
-                y: utils.withGrid(3),
+                x: utils.withGrid(2),
+                y: utils.withGrid(9),
                 src: "/images/characters/people/personaje1.png"
             })
         },

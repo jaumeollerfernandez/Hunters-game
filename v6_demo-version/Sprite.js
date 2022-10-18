@@ -11,7 +11,7 @@ class Sprite {
 
     //Sombras
     this.shadow = new Image();
-    this.useShadow = true; // config.useShadow || False   ( para los objs que se quieera usar)
+    this.useShadow = true ||false; // config.useShadow || False   ( para los objs que se quieera usar)
     if (this.useShadow) {
         this.shadow.src = "/images/characters/shadow.png";
     }
