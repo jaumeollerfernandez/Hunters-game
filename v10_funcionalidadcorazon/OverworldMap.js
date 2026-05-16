@@ -103,8 +103,8 @@ class OverworldMap{
 
 window.OverworldMaps={
     DemoRoom: {
-        lowerSrc: "/images/maps/lower_background.png",
-        upperSrc: "/images/maps/upper_background.png",
+        lowerSrc: "images/maps/lower_background.png",
+        upperSrc: "images/maps/upper_background.png",
        
         gameObjects:{
             
@@ -112,7 +112,7 @@ window.OverworldMaps={
                 isPlayerControlled: false ,
                 x: utils.withGrid(11),
                 y: utils.withGrid(7),
-                src:"/images/grabadora.png",
+                src:"images/grabadora.png",
                 // behaviorLoop:[
                 //     {type:"Questions", text: "pregunta2"}
                 // ],
@@ -131,7 +131,7 @@ window.OverworldMaps={
                 isPlayerControlled: false ,
                 x: utils.withGrid(16),
                 y: utils.withGrid(5),
-                src:"/images/characters/people/guard2.png",
+                src:"images/characters/people/guard2.png",
                 behaviorLoop:[
                     {type:"stand", direction: "down", time: 1000},
                     {type:"walk", direction:"right"},
@@ -149,7 +149,7 @@ window.OverworldMaps={
                 isPlayerControlled: true,
                 x: utils.withGrid(2),
                 y: utils.withGrid(9),
-                src: "/images/characters/people/personaje1.png"
+                src: "images/characters/people/personaje1.png"
             })
         },
 
@@ -302,8 +302,8 @@ window.OverworldMaps={
 
     },
     Kitchen: {
-        lowerSrc: "/images/maps/KitchenLower.png",
-        upperSrc: "/images/maps/KitchenUpper.png",
+        lowerSrc: "images/maps/KitchenLower.png",
+        upperSrc: "images/maps/KitchenUpper.png",
         gameObjects:{
             hero: new GameObject({
                 x: 4,
@@ -313,13 +313,13 @@ window.OverworldMaps={
             npc1: new GameObject({
                 x: 3,
                 y: 5,
-                src: "/images/characters/people/npc1.png"
+                src: "images/characters/people/npc1.png"
             }),
 
             npc2: new GameObject({
                 x: 9,
                 y: 4,
-                src: "/images/characters/people/npc2.png"
+                src: "images/characters/people/npc2.png"
             })
 
         }

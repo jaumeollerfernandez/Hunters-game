@@ -9,7 +9,7 @@ class Questions{
         this.q4 = new Audio('audio/pregunta4.mp3');
         this.sounds = [this.q1, this.q2, this.q3, this.q4];
         this.element = null;
-        this.img = "/images/characters/guard.png"
+        this.img = "images/characters/guard.png"
     }
     createElement(){
         this.element = document.createElement('div');
